@@ -1,5 +1,6 @@
 FROM ubuntu:14.04
-MAINTAINER Seva Dolgopolov 
+
+MAINTAINER Seva Dolgopolov <zavalit@gmail.com> 
 
 RUN apt-get update
 RUN apt-get install -y mysql-server-5.5
