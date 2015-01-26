@@ -1,0 +1,21 @@
+web:
+ image: wordpress/nginx
+ volumes_from:
+  - php
+ ports:
+  - "80:80"
+
+php:
+ image: wordpress/php
+ links: 
+   - mysql:db
+ volumes:
+   - /var/www/wordpress:/var/www/app
+
+mysql:
+ image: wordpress/mysql
+ volumes:
+   - /data/mysql:/var/lib/mysql
+   - /data/log:/var/log/mysql
+ ports:
+   - "3306:3306"
